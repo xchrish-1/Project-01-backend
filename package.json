@@ -8,7 +8,7 @@
     "dev:watch": "node --watch -r ts-node/register src/index.ts",
     "dev:stripe": "concurrently \"npm run dev\" \"npm run stripe\"",
     "stripe": "C:\\stripe-cli\\stripe.exe listen --forward-to localhost:7000/api/order/checkout/webhook",
-    "build": "npm install && npx tsc",
+    "build": "npx tsc",
     "start": "node dist/src/index.js"
   },
   "keywords": [],
