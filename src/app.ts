@@ -28,6 +28,9 @@ app.use(express.json());
 app.get("/health", async (req: Request, res: Response) => {
   res.send({ message: "health OK!" });
 });
+app.get("/", (req, res) => {
+  res.json({ status: "Backend is running ✅" });
+});
 
 app.use("/api/my/user", myUserRoute);
 app.use("/api/my/restaurant", myRestaurantRoute);
