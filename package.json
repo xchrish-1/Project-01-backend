@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "dev": "ts-node src/index.ts",
     "dev:watch": "node --watch -r ts-node/register src/index.ts",
