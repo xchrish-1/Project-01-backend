@@ -20,7 +20,10 @@ cloudinary.config({
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://project-01-frontend-ohln.vercel.app",
+  credentials: true
+}));
 
 app.use("/api/order/checkout/webhook", express.raw({ type: "*/*" }));
 app.use(express.json());
