@@ -17,8 +17,10 @@ const getCurrentUser = async (req: Request, res: Response) => {
 
 const createCurrentUser = async (req: Request, res: Response) => {
   try {
-    const { auth0Id } = req.body;
-    const existingUser = await User.findOne({ auth0Id });
+    const { auth0Id, email } = req.body;
+    
+    // Check by both auth0Id AND email
+    const existingUser = await User.findOne({ $or: [{ auth0Id }, { email }] });
 
     if (existingUser) {
       return res.status(200).send();
